@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>常德市DIP分组查询(个人版)</title>
+</head>
+<body>
+
+<style type="text/css">
+div{
+    width: 520px;
+    height: 600px;
+    float: left;
+    {#background: lightgrey;#}
+}
+    .pic{
+        width: 520px;
+        height: 600px;
+        float: bottom;
+        {#background: lightgrey;#}
+    }
+</style>
+
+<div>
+
+<form method="post" class="input-group-addon" >
+    <h3>常德市DIP分组查询(个人版)</h3>
+
+    {{ form.csrf_token() }}
+    {{ form.diagnosis.label(class='input-group-addon') }}{{ form.diagnosis(size=50,class='form-control') }} <br>
+    {{ form.operation.label(class='input-group-addon') }}{{ form.operation(size=80,class='form-control')  }} <br>
+    {{ form.Submit(class="btn btn-primary") }}<br>
+	{{ form.fenzu.label (class='input-group-addon')}}{{ form.fenzu(class='form-control') }}<br>
+	{{ form.fenzhi.label(class='input-group-addon') }}{{ form.fenzhi(class='form-control') }}<br>
+	{{ form.zhuyaozhenduan.label(class='input-group-addon') }}{{ form.zhuyaozhenduan (class='form-control')}}<br>
+	{{ form.shoushucaozuo.label (class='input-group-addon')}}{{ form.shoushucaozuo(class='form-control') }}<br>
+	<h5>本分组器利用2021年常德市医保局DIP病种目录与分值表构建，分组结果仅供参考。</h5>
+	<h5>by:xiejialong213@163.com</h5>
+    <br>
+{#    {% for message in get_flashed_messages() %}#}
+{#        {{ message }} <br>#}
+{#    {% endfor %}#}
+
+</form>
+</div>
+
+
+
+</body>
+</html>
