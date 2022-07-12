@@ -87,14 +87,8 @@ def get_dip(zyzd,sscz,bah):
         return('xxxx')
 
 
-
-
-
-
 # 使用WTF实现表单 自定义表单类
 class LoginForm(FlaskForm):
-    # 'Marital','Site', 'Tumor_size','Race','Chemotherapy','Sex','Age','Surgery'
-
     diagnosis = StringField('主要诊断编码(完整长度):',validators=[validators.DataRequired()])
     operation = StringField('手术操作编码(多个用逗号隔开):')
     fenzu = StringField('分组:' )
@@ -102,9 +96,6 @@ class LoginForm(FlaskForm):
     zhuyaozhenduan = StringField('主要诊断:' )
     shoushucaozuo = StringField('手术操作:' )
     Submit = SubmitField('查询')
-
-# mod = joblib.load('gbdt_model.pkl')
-
 
 @app.route('/', methods=['GET','POST'])
 def login():
@@ -140,10 +131,7 @@ def login():
             # flash('error')
             return 'ERROR: 诊断不能为空!'
 
-
-
     return render_template('index.html',form=login_form)
-
 
 if __name__ == '__main__':
     app.run()
